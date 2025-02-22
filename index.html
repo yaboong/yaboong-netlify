@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YB's LiveATC Silence Remover</title>
+    <script src="./assets/ffmpeg/ffmpeg.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="drop-area">
+    <p>Drag & Drop MP3 files here</p>
+    <ul id="file-list"></ul>
+    <div id="file-controls">
+        <label for="file-input" id="file-label">Choose Files</label>
+        <input type="file" id="file-input" multiple accept="audio/mpeg">
+        <button id="process-button">Silence Remove</button>
+    </div>
+</div>
+<p id="loading-indicator">Processing...</p>
+<div id="control-buttons">
+    <button id="download-all-button" class="button hidden">Download All</button>
+</div>
+<div id="log-container"></div>
+</body>
+</html>
