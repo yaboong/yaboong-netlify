@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LiveATC Silence Remover is a free web tool that removes silent sections from ATC MP3 recordings. Trim LiveATC MP3 files easily and quickly.">
+    <meta name="keywords" content="LiveATC, Remove Silence, Trim LiveATC mp3, MP3 processing, silent remover, audio trimming, flight communication, ATC audio, aviation recording">
+    <meta name="author" content="Yaboong">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="LiveATC Silence Remover">
+    <meta property="og:description" content="A web tool that automatically removes silent sections from LiveATC MP3 files. Trim LiveATC MP3 files automatically – free of charge and AD-free.">
+    <meta property="og:image" content="https://yaboong.netlify.app/images/yaboong.jpeg">
+    <meta property="og:url" content="https://yaboong.netlify.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LiveATC Silence Remover">
+    <meta name="twitter:description" content="A web tool that automatically removes silent sections from LiveATC MP3 files.">
+    <meta name="twitter:image" content="https://yaboong.netlify.app/images/yaboong.jpeg">
+
+    <title>LiveATC mp3 Silence Remover | Trim Your LiveATC MP3 Files</title>
+    <link rel="stylesheet" href="/assets/css/liveatc.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q8KRHXS7R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5Q8KRHXS7R');
+    </script>
+</head>
+<body>
+    <h1>LiveATC Silence Remover</h1>
+    <div id="drop-area">
+        <p>Drag & Drop mp3 Files</p>
+        <ul id="file-list"></ul>
+        <div id="file-controls">
+            <label for="file-input" id="file-label">Choose Files</label>
+            <input type="file" id="file-input" multiple accept="audio/mpeg">
+            <button id="process-button">Silence Remove</button>
+        </div>
+    </div>
+    <p id="mobile-message">For a smoother experience, we recommend a <strong>desktop...</strong> <br>but if you like a challenge, be my guest! ;)</p>
+    <p id="loading-indicator">Processing...</p>
+    <div id="control-buttons">
+        <button id="download-all-button" class="button hidden">Download All</button>
+    </div>
+    <div id="log-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.10.0/dist/ffmpeg.min.js" defer></script>
+    <script src="/assets/js/liveatc.js" defer></script>
+</body>
+</html>

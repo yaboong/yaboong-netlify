@@ -6,6 +6,10 @@ body {
     color: #4299e1;
 }
 
+h1 {
+    font-size: 25px;
+}
+
 #mobile-message {
     font-size: 13px;
     color: #666;
