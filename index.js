@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const { createFFmpeg } = window.FFmpeg;
     const ffmpeg = createFFmpeg({
-//        wasmPath: './assets/ffmpeg/ffmpeg-core.js',
-        log: true,
-        corePath: "./assets/ffmpeg/ffmpeg-core.js",
-        wasmPath: "./assets/ffmpeg/ffmpeg-core.wasm"
+//        log: true,
+        corePath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js",
+        wasmPath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.wasm"
     });
 
     await ffmpeg.load();
