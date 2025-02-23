@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 listItem.innerHTML = "";
                 const cleanedFileName = document.createElement("span");
                 cleanedFileName.textContent = outputMp3;
+                listItem.appendChild(cleanedFileName);
 
                 const downloadLink = document.createElement("a");
                 downloadLink.href = URL.createObjectURL(audioBlob);
@@ -126,8 +127,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 downloadLink.textContent = "Download";
                 downloadLink.classList.add("button");
 
-                listItem.appendChild(cleanedFileName);
-                listItem.appendChild(downloadLink);
+                const isMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+                if (!isMobile) {
+                    listItem.appendChild(downloadLink);
+                }
 
                 processedFiles.push({ name: outputMp3, blob: audioBlob });
             } catch (error) {

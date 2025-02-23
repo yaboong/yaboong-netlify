@@ -23,7 +23,7 @@ body {
     color: #333;
     font-size: 18px;
     font-weight: bold;
-    min-height: 300px;
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
