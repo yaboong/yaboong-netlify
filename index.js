@@ -3,9 +3,11 @@ function isMobile() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+    const mobileMessage = document.getElementById("mobile-message");
     if (isMobile()) {
-        alert("For a smoother experience, we recommend a desktop... but if you like a challenge, be my guest! ;)")
+        mobileMessage.style.display = "block";
     }
+
     if (!window.FFmpeg || !window.FFmpeg.createFFmpeg) {
         console.error("FFmpeg library loading failed!");
         return;
@@ -88,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     processButton.addEventListener("click", async () => {
         isProcessing = true;
         processButton.style.display = "none";
+        mobileMessage.style.display = "none";
         document.getElementById("file-label").style.display = "none";
         loadingIndicator.style.display = "block";
         logContainer.style.display = "block";

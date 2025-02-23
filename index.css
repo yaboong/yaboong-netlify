@@ -6,6 +6,14 @@ body {
     color: #4299e1;
 }
 
+#mobile-message {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+}
+
 #drop-area,
 #log-container {
     width: 75%;
