@@ -29,19 +29,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     const downloadAllButton = document.getElementById("download-all-button");
 
     let filesArray = [];
+    let isProcessing = false;
 
     dropArea.addEventListener("dragover", (event) => {
         event.preventDefault();
-//        dropArea.style.background = "#e0e0e0";
     });
 
     dropArea.addEventListener("dragleave", () => {
-//        dropArea.style.background = "#f0f0f0";
     });
 
     dropArea.addEventListener("drop", async (event) => {
         event.preventDefault();
-//        dropArea.style.background = "#f0f0f0";
+        if (isProcessing) {
+            alert("Processing is in progress");
+            return;
+        }
         const files = event.dataTransfer.files;
         addFiles(files);
     });
@@ -77,11 +79,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     processButton.addEventListener("click", async () => {
+        isProcessing = true;
         processButton.style.display = "none";
         document.getElementById("file-label").style.display = "none";
         loadingIndicator.style.display = "block";
         logContainer.style.display = "block";
-
 
         let processedFiles = [];
 
@@ -146,5 +148,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 });
             });
         }
+        isProcessing = false;
     });
 });
