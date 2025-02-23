@@ -1,4 +1,11 @@
+function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
+    if (isMobile()) {
+        alert("For a smoother experience, we recommend a desktop... but if you like a challenge, be my guest! ;)")
+    }
     if (!window.FFmpeg || !window.FFmpeg.createFFmpeg) {
         console.error("FFmpeg library loading failed!");
         return;
@@ -127,8 +134,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 downloadLink.textContent = "Download";
                 downloadLink.classList.add("button");
 
-                const isMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-                if (!isMobile) {
+                if (!isMobile()) {
                     listItem.appendChild(downloadLink);
                 }
 
