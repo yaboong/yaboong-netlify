@@ -8,7 +8,7 @@ body {
 
 #drop-area,
 #log-container {
-    width: 70%;
+    width: 60%;
     max-width: 1000px;
     box-sizing: border-box;
     margin: 20px auto;
@@ -55,7 +55,7 @@ body {
 .progress-bar {
     width: 100px;
     height: 6px;
-    background: #555;
+    background: #ffffff;
     border-radius: 3px;
     overflow: hidden;
     position: relative;
