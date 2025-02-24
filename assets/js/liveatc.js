@@ -22,16 +22,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await ffmpeg.load();
 
-    const originalBitrateInput = document.getElementById("original-bitrate-input");
-    originalBitrateInput.value = "32k"; // default bitrate
-    ffmpeg.setLogger(({ type, message }) => {
-        if (message.includes("start: 0.000000")) { // [fferr] Duration: 00:31:52.06, start: 0.000000, bitrate: 16 kb/s
-            const bitrateMatch = message.match(/bitrate:\s*(\d+)\s*kb\/s/);
-            if (bitrateMatch) {
-                originalBitrateInput.value = `${bitrateMatch[1]}k`;
-            }
-        }
-    });
+//    ffmpeg.setLogger(({ type, message }) => {
+//        if (message.includes("start: 0.000000")) { // [fferr] Duration: 00:31:52.06, start: 0.000000, bitrate: 16 kb/s
+//            const bitrateMatch = message.match(/bitrate:\s*(\d+)\s*kb\/s/);
+//            if (bitrateMatch) {
+//                originalBitrateInput.value = `${bitrateMatch[1]}k`;
+//            }
+//        }
+//    });
 
     const dropArea = document.getElementById("drop-area");
     const fileInput = document.getElementById("file-input");
@@ -121,8 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 await ffmpeg.run("-i", tempWav, "-af", "volume=2.0, silenceremove=start_periods=1:start_threshold=-40dB:start_silence=1.5:stop_threshold=-40dB:stop_silence=2:stop_periods=-1", cleanedWav);
 
                 progress.style.width = "75%";
-                console.log(`[YB LOG] Output Bitrate: ${fileName}, ${originalBitrateInput.value}`);
-                await ffmpeg.run("-i", cleanedWav, "-codec:a", "libmp3lame", "-b:a", originalBitrateInput.value, "-ar", "8000", "-ac", "1", outputMp3);
+                await ffmpeg.run("-i", cleanedWav, "-codec:a", "libmp3lame", "-b:a", "32k", "-ar", "8000", "-ac", "1", outputMp3);
 
                 progress.style.width = "100%";
 
@@ -145,7 +142,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 processedFiles.push({ name: outputMp3, blob: audioBlob });
-                originalBitrateInput.value = "32k";
             } catch (error) {
                 console.error("[YB ERR] Error while processing file:", error);
             }
