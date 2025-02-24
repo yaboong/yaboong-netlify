@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 await ffmpeg.run("-i", tempWav, "-af", "volume=2.0, silenceremove=start_periods=1:start_threshold=-40dB:start_silence=1.5:stop_threshold=-40dB:stop_silence=2:stop_periods=-1", cleanedWav);
 
                 progress.style.width = "75%";
-//                console.log(`[YB LOG] Output Bitrate: ${fileName}, ${originalBitrateInput.value}`);
+                console.log(`[YB LOG] Output Bitrate: ${fileName}, ${originalBitrateInput.value}`);
                 await ffmpeg.run("-i", cleanedWav, "-codec:a", "libmp3lame", "-b:a", originalBitrateInput.value, "-ar", "8000", "-ac", "1", outputMp3);
 
                 progress.style.width = "100%";
