@@ -3,6 +3,7 @@ function isMobile() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+    console.log("Silence Remover - v2.0.0")
     const mobileMessage = document.getElementById("mobile-message");
     if (isMobile()) {
         mobileMessage.style.display = "block";
