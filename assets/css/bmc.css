@@ -1,0 +1,35 @@
+/* Buy Me a Coffee */
+.bmc-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bmc-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #BD5FFF; /* 버튼 배경색 */
+    color: #ffffff; /* 글씨 색 */
+    font-family: 'Cookie', cursive;
+    font-size: 18px; /* 폰트 크기 */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px; /* 버튼 둥글기 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bmc-btn:hover {
+    background-color: #9A48D0; /* 호버 시 색상 변경 */
+    transform: translateY(-2px);
+}
+
+.bmc-btn img {
+    width: 24px; /* 아이콘 크기 */
+    height: 24px;
+    margin-right: 8px;
+}
+
+.bmc-btn-text {
+    line-height: 1;
+}
