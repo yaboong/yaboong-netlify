@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const processButton = document.getElementById("process-button");
     const loadingIndicator = document.getElementById("loading-indicator");
     const downloadAllButton = document.getElementById("download-all-button");
+    const bmcButton = document.getElementById("bmc-button");
 
     let filesArray = [];
     let isProcessing = false;
@@ -148,6 +149,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         loadingIndicator.style.display = "none";
+        bmcButton.style.display = "inline-flex";
 
         if (processedFiles.length > 0) {
             downloadAllButton.classList.remove("hidden");
